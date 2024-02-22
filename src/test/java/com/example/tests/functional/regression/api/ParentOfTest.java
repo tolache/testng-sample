@@ -17,4 +17,8 @@ public class ParentOfTest {
 
     protected Logger _logger = LogManager.getLogger(this.getClass().getSimpleName());
 
+    @BeforeMethod(alwaysRun = true)
+    public void executeBeforeEachTest(Method method, ITestContext context) {
+        _logger.info("running before each test method on parent class");
+    }
 }
