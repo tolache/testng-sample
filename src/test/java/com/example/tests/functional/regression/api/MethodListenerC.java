@@ -28,6 +28,9 @@ public class MethodListenerC implements IInvokedMethodListener {
             _currentClassName = method.getTestMethod().getConstructorOrMethod().getMethod().getDeclaringClass().getSimpleName();
             tc_openBlock(_currentClassName);
         }
+
+        tc_openBlock(methodName, String.format("running %s", method.isTestMethod() ? "test" : "configuration method"));
+        _logger.debug("Starting [{}] in class [{}]", methodName, _currentClassName);
     }
 
     @Override
